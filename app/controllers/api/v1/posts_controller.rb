@@ -1,7 +1,7 @@
 module Api
   module V1
     class PostsController < ApplicationController
-      before_action :set_post
+      before_action :set_post, only: [:show, :update, :destroy]
 
       def index
         #取得したレコードを特定のキーで並び替える
@@ -21,6 +21,11 @@ module Api
         else
           render json:{ status: 'ERROR', data: post.errors }
         end
+      end
+
+      def destroy
+        @post.destroy
+        render json: { status: 'SCCESS', message: 'Deleted the post', data: @post }
       end
 
       private
