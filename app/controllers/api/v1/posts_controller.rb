@@ -28,6 +28,14 @@ module Api
         render json: { status: 'SCCESS', message: 'Deleted the post', data: @post }
       end
 
+      def update
+        if @post.update(post_params)
+          render json: { status: 'SUCCESS', message: 'Updated the post', data: @post }
+        else
+          render json: { status: 'SUCCESS', message: 'Not updated', data: @post.errors }
+        end
+      end
+        
       private
         # 許可するパラメータはprivateメソッドでカプセル化します。
         # これは非常によい手法であり、createとupdateの両方で使いまわすことで
