@@ -36,5 +36,12 @@ group :development do
   gem 'spring'
 end
 
+group :development,:test do
+  gem 'rspec-rails', '~> 3.8'
+  gem 'factory_bot_rails', '~> 5.0'
+  gem 'minitest'
+  gem 'minitest-reporters'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
