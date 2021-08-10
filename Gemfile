@@ -37,7 +37,7 @@ group :development do
 end
 
 group :development,:test do
-  gem 'rspec-rails', '~> 3.8'
+  gem "rspec-rails", "~> 4.0.1"
   gem 'factory_bot_rails', '~> 5.0'
   gem 'minitest'
   gem 'minitest-reporters'

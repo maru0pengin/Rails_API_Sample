@@ -1,6 +1,6 @@
-request 'rails_helper'
+require 'rails_helper'
 
-describe 'PostAPI' do
+RSpec.describe 'PostAPI' do
   it '全てのポストを取得する' do
     FactoryBot.create_list(:post, 10)
 
